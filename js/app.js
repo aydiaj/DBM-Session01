@@ -151,7 +151,7 @@
   $('#syllabusShortcut').addEventListener('click', event => { event.preventDefault(); showSyllabus(); });
   $('#openRoadmap').addEventListener('click', () => showSyllabus());
   $('#returnToLesson').addEventListener('click', () => showStep(current));
-  $('#worksheetShortcut').addEventListener('click', () => showStep(7));
+  //$('#worksheetShortcut').addEventListener('click', () => showStep(7));
   $('#resetProgress').addEventListener('click', () => {
     if (!window.confirm('Reset completion checkmarks for Session 01?')) return;
     done = []; confirmedComplete = false;
