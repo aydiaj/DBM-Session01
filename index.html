@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#102d49" name="theme-color" />
+    <meta
+        content="Database Management (DB3) Session 01: course syllabus and roadmap, DB2 SQL recall, SSMS versus ADO.NET versus EF Core, and first C# Console connection."
+        name="description" />
+    <title>DBM (DB3) · Session 01 · Course Introduction &amp; ADO.NET | TVET Codelab Studio</title>
+    <link href="images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script defer="" src="js/app.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to learning content</a>
+    <div class="shell">
+        <div class="mobile-scrim" hidden="" id="scrim"></div>
+        <aside aria-label="Lesson navigation" class="sidebar" id="sidebar">
+            <div class="brand"><span aria-hidden="true" class="brand-mark">▤</span><span><small>TVET
+                        INTERACTIVE</small><strong>CODELAB STUDIO</strong></span><button
+                    aria-label="Close lesson navigation" class="icon-btn close-menu" id="closeMenu"
+                    type="button">×</button></div>
+            <div class="course-block"><span class="course-code">DBM · PDB2 · 2026–2027</span>
+                <h2>Database<br />Management</h2>
+                <p>01 / Course introduction &amp; first ADO.NET Console app</p>
+                <div class="progress-heading"><span>Lesson progress</span><strong id="progressText">0 / 8</strong></div>
+                <div aria-label="Completed lesson sections" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0"
+                    class="progress-bar" id="progressBar" role="progressbar">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+            <nav aria-label="Lesson sections">
+                <ol class="step-nav" id="stepNav">
+                    <li><button aria-current="step" class="step-link active" data-step="0"><span
+                                class="step-num">01</span><span>Course welcome &amp; syllabus<small>20
+                                    min</small></span><span aria-hidden="true" class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="1"><span class="step-num">02</span><span>Recall DB2: SQL
+                                &amp; SSMS<small>10 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="2"><span class="step-num">03</span><span>From query to C#
+                                application<small>10 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="3"><span class="step-num">04</span><span>SSMS vs ADO.NET vs
+                                EF Core<small>15 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="4"><span class="step-num">05</span><span>Why EF Core
+                                later?<small>15 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="5"><span class="step-num">06</span><span>ADO.NET: first
+                                components<small>15 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                    <li><button class="step-link" data-step="6"><span class="step-num">07</span><span>First C# Console
+                                app<small>30 min</small></span><span aria-hidden="true" class="tick">✓</span></button>
+                    </li>
+                    <li><button class="step-link" data-step="7"><span class="step-num">08</span><span>Review &amp;
+                                what’s next<small>5 min</small></span><span aria-hidden="true"
+                                class="tick">✓</span></button></li>
+                </ol>
+            </nav>
+            <div class="sidebar-resources"><span>QUICK RESOURCES</span><a href="sources.html">↗ Sources &amp;
+                    reading</a><a href="#syllabus" id="syllabusShortcut">▤ Course syllabus &amp; roadmap</a><button
+                    id="worksheetShortcut" type="button">⌘ Submission instructions</button><button id="resetProgress"
+                    type="button">↺ Reset lesson progress</button></div>
+            <div class="sidebar-foot">UNRWA Gaza Training Centre<br />Programming &amp; Databases · TVET Level 2</div>
+        </aside>
+        <div class="workspace">
+            <header class="topbar"><button aria-controls="sidebar" aria-expanded="false"
+                    aria-label="Open lesson navigation" class="icon-btn menu-btn" id="menuBtn">☰</button>
+                <div aria-label="Location in codelab" class="breadcrumb">DATABASE MANAGEMENT <span> / </span> <b
+                        id="viewLabel">SESSION 01</b></div>
+                <div class="top-actions"><span class="time-pill">◷ 120 MIN</span><button
+                        aria-label="Switch to dark mode" class="icon-btn" id="themeBtn" title="Change theme">◐</button>
+                </div>
+            </header>
+            <main class="main" id="content" tabindex="-1">
+
+
+
+
+
+
+
+                <section aria-labelledby="t0" class="lesson active" data-panel="0">
+
+                    <div class="hero hero-intro">
+                        <div class="hero-main">
+                            <span class="eyebrow">
+                                TVET INTERACTIVE CODELAB STUDIO · SESSION 01
+                            </span>
+                            <h1>Database Management <em>(DB3)</em></h1>
+                            <p>
+                                From the SQL queries you already know to the data-access code behind real applications.
+                            </p>
+                            <div class="chips">
+                                <span>GTC · PDB2</span>
+                                <span>2026–2027</span>
+                                <span>120 minutes · Remote-first</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="heading-row">
+                        <div><span class="overline">WELCOME TO YOUR COURSE</span>
+                            <h2>What will Database Management teach you?</h2>
+                        </div><span class="duration">20 MIN</span>
+                    </div>
+
+                    <p class="lead">
+                        In your previous SQL course (DB2), you learned to work with relational tables and execute SQL
+                        commands using SQL Server and SSMS. <strong>Database Management (DB3)</strong> builds on that
+                        foundation in two complementary directions.<br>
+
+                        First, you will connect C# Console applications to SQL Server using <strong>ADO.NET</strong>,
+                        then discover how <strong>Entity Framework Core (EF Core)</strong> simplifies data access
+                        through C# objects and LINQ.
+<br>
+                        You will also develop more advanced SQL Server skills, including <strong>views, stored
+                            procedures, user-defined functions, indexes, transactions, database security, execution
+                            plans, and query-performance analysis</strong>.
+
+                        Together, these skills will support your parallel <strong>ASP.NET Core Web Development
+                            course</strong> and prepare you for future desktop application development.
+
+                    </p>
+                    <div aria-label="Course progression" class="course-bridge">
+                        <article><span class="bridge-num">BEFORE · DB2</span><strong>SQL &amp; SQL Server</strong>
+                            <p>Design tables and manually query or change data using T-SQL in SSMS.</p>
+                        </article>
+                        <span aria-hidden="true" class="bridge-arrow">→</span>
+                        <article class="now"><span class="bridge-num">NOW · DB3</span><strong>C# data access</strong>
+                            <p>Use Console applications with ADO.NET, then EF Core and other database-management skills.
+                            </p>
+                        </article>
+                        <span aria-hidden="true" class="bridge-arrow">→</span>
+                        <article><span class="bridge-num">CONNECTED COURSES</span><strong>Desktop &amp; Web</strong>
+                            <p>Later desktop development and the parallel ASP.NET Core Web course use these data-access
+                                ideas in their own interfaces.</p>
+                        </article>
+                    </div>
+                    <div class="dash-note"><img alt="Database teacher mascot" src="images/db-mascot-teacher.webp" />
+                        <div><strong>DB Mentor · Your roadmap</strong>
+                            <p>We begin with why application data access is needed. The labs in DB3 use <b>C# Console
+                                    applications</b>—not WPF, Windows Forms or ASP.NET interfaces.</p>
+                        </div>
+                    </div>
+                    <div class="heading-row compact">
+                        <h3>Course goals from the training plan</h3><small>Not all taught today</small>
+                    </div>
+                    <div class="outcome-grid">
+                        <div><b>01 · Access data</b>
+                            <p>Explain SQL Server, ADO.NET, ORM and EF Core roles.</p>
+                        </div>
+                        <div><b>02 · Work with EF Core</b>
+                            <p>Query, update and map data and schema changes.</p>
+                        </div>
+                        <div><b>03 · Program in T-SQL</b>
+                            <p>Use scripts, views, functions and procedures.</p>
+                        </div>
+                        <div><b>04 · Manage safely</b>
+                            <p>Transactions, security, query performance and deployments.</p>
+                        </div>
+                    </div>
+                    <div class="section-heading">
+                        <div>
+                            <h2>Our syllabus &amp; 16-week roadmap</h2>
+                            <p>The syllabus is included in the site. View or download the PDF; explore the matching
+                                roadmap.</p>
+                        </div><span class="activity-pill">COURSE ORIENTATION</span>
+                    </div>
+                    <div class="course-materials">
+                        <div class="pdf-mini">
+                            <div class="pdf-mini-head"><b>Official course plan · 3-page PDF</b><a class="btn subtle"
+                                    href="resources/DBM_Course_Syllabus_2026-2027.pdf" rel="noopener"
+                                    target="_blank">Open PDF ↗</a></div><iframe loading="lazy"
+                                src="resources/DBM_Course_Syllabus_2026-2027.pdf#page=1&amp;view=FitH"
+                                title="Embedded 2026-2027 DBM course syllabus PDF"></iframe>
+                        </div>
+                        <div class="roadmap-mini"><a href="images/dbm-syllabus-roadmap.jpg" rel="noopener"
+                                target="_blank"><img
+                                    alt="16-week Database Management roadmap matching the uploaded syllabus"
+                                    loading="lazy" src="images/dbm-syllabus-roadmap.jpg" /></a>
+                            <p><b>At a glance:</b> Week 1 ADO.NET; Weeks 2–5 EF Core fundamentals; Weeks 6–14 T-SQL,
+                                security and performance; Weeks 15–16 review and final assessment.</p><button
+                                class="btn outline" id="openRoadmap" type="button">Explore full roadmap</button>
+                        </div>
+
+                    </div>
+
+                    <div class="heading-row compact">
+                        <h3>Our first three meetings: ADO.NET</h3><small>3 × 120 minutes</small>
+                    </div>
+                    <div class="three-session-path">
+                        <div><span>01 · TODAY</span><strong>Meet the data-access stack</strong>
+                            <p>Course introduction, technology choices and your first C# Console connection.</p>
+                        </div>
+                        <div><span>02 · NEXT</span><strong>Query data safely</strong>
+                            <p>Parameterized <code>SELECT</code>, <code>SqlCommand</code>, <code>SqlDataReader</code>
+                                and returned rows.</p>
+                        </div>
+                        <div><span>03 · THEN</span><strong>Apply and troubleshoot</strong>
+                            <p>Guided ADO.NET operations, safe parameters and exception handling.</p>
+                        </div>
+                    </div>
+                    <div class="heading-row compact">
+                        <h3>Today’s eight lesson steps</h3><small>120 minutes total</small>
+                    </div>
+                    <div class="timeline" id="timeline"></div>
+                </section>
+                <section aria-labelledby="t1" class="lesson" data-panel="1" hidden="">
+                    <div class="section-header"><span class="overline">STEP 02 · WHAT YOU ALREADY KNOW</span><span
+                            class="duration">10 MIN</span></div>
+                    <h1 id="t1">Recall DB2: SQL, SQL Server &amp; SSMS</h1>
+                    <p class="lead">You have met these terms before. This quick recall makes their roles clear before we
+                        add C#.</p>
+                    <div class="grid-three">
+                        <article class="concept-card"><span class="card-tag">LANGUAGE</span>
+                            <h3>SQL / T-SQL</h3>
+                            <p>Commands such as <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, and
+                                <code>DELETE</code> that express data operations.
+                            </p>
+                        </article>
+                        <article class="concept-card accent"><span class="card-tag">DATABASE ENGINE</span>
+                            <h3>SQL Server</h3>
+                            <p>The DBMS that stores databases, processes queries, checks permissions and returns
+                                results.</p>
+                        </article>
+                        <article class="concept-card"><span class="card-tag">DESKTOP CLIENT</span>
+                            <h3>SSMS</h3>
+                            <p>A tool you open to connect to SQL Server, edit/run SQL and inspect or administer a
+                                database.</p>
+                        </article>
+                    </div>
+                    <div class="activity"><span class="overline">RECALL CHALLENGE</span>
+                        <h2>Where does the work actually happen?</h2>
+                        <div class="split-compare">
+                            <div><span class="tiny-label">WHAT YOU TYPE IN SSMS</span>
+                                <pre class="code-block"><code>SELECT StudentId, FullName
+FROM dbo.Students;</code></pre>
+                            </div>
+                            <div><span class="tiny-label">WHAT SQL SERVER RETURNS</span>
+                                <div class="table-holder">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>StudentId</th>
+                                                <th>FullName</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Lina</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Omar</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="small-muted">Illustrative result; no query runs in the webpage.</p>
+                            </div>
+                        </div>
+                        <p class="activity-prompt">Which component executes the query and returns the rows?</p>
+                        <div class="choice-grid" data-quiz="recall"><button data-choice="a">SSMS itself</button><button
+                                data-choice="b">SQL Server</button><button data-choice="c">The SQL language</button>
+                        </div>
+                        <p aria-live="polite" class="feedback" id="recallFeedback"></p>
+                    </div>
+                    <div class="notice"><strong>DB2 takeaway:</strong> SSMS is how a person interacts with SQL Server.
+                        In DB3, we need a C# program to do that work <i>without a person manually opening SSMS</i>.
+                    </div>
+                </section>
+                <section aria-labelledby="t2" class="lesson" data-panel="2" hidden="">
+                    <div class="section-header"><span class="overline">STEP 03 · THE PROBLEM WE NEED TO
+                            SOLVE</span><span class="duration">10 MIN</span></div>
+                    <h1 id="t2">How can C# get the same student record?</h1>
+                    <p class="lead">In DB2, you typed a query into SSMS. Imagine a future desktop or web application
+                        needs to show the same data after a user enters a Student ID. The application must communicate
+                        with SQL Server through code.</p>
+                    <div class="activity"><span class="overline">PREDICT → REVEAL</span>
+                        <h2>Two paths to one database engine</h2>
+                        <div class="data-flow">
+                            <div class="flow-line"><span class="flow-node">Developer</span><span>→</span><span
+                                    class="flow-node">SSMS</span><span>→</span><span class="flow-node engine">SQL
+                                    Server</span></div>
+                            <div class="flow-line"><span class="flow-node">C# Console app</span><span>→</span><span
+                                    class="flow-node bridge-missing" id="bridgeSlot">?</span><span>→</span><span
+                                    class="flow-node engine">SQL Server</span></div>
+                        </div><button class="btn primary" id="revealBridge" type="button">Reveal the missing
+                            connection</button>
+                        <p aria-live="polite" class="feedback" id="bridgeFeedback">Think: which .NET API can open a
+                            connection and send a command?</p>
+                    </div>
+                    <div class="grid-two">
+                        <div class="concept-card">
+                            <h3>Input</h3>
+                            <p>The Console app receives a request: “find student 1.” Later, a desktop or web interface
+                                can provide that request.</p>
+                        </div>
+                        <div class="concept-card accent">
+                            <h3>Output</h3>
+                            <p>SQL Server returns values. The C# app reads them and prints an answer such as “Student:
+                                Lina.”</p>
+                        </div>
+                    </div>
+                    <div class="notice secondary"><strong>Important boundary:</strong> Today we write <b>Console apps
+                            only</b>. The database-access skills will transfer to other courses, but we are not building
+                        a desktop GUI, web page, API or EF Core app in this session.</div>
+                </section>
+                <section aria-labelledby="t3" class="lesson" data-panel="3" hidden="">
+                    <div class="section-header"><span class="overline">STEP 04 · DIFFERENT TOOLS, DIFFERENT
+                            JOBS</span><span class="duration">15 MIN</span></div>
+                    <h1 id="t3">SSMS vs ADO.NET vs EF Core</h1>
+                    <p class="lead">All three can be part of the same development workflow. They are <b>not</b> three
+                        databases and <b>not</b> interchangeable tools.</p>
+                    <div class="grid-three tech-grid">
+                        <article class="concept-card"><span class="card-tag">HUMAN-OPERATED TOOL</span>
+                            <h3>SSMS</h3>
+                            <p>Graphical SQL Server client for writing queries, browsing tables and administration.</p>
+                            <p><strong>Used by:</strong> developers and administrators.</p>
+                        </article>
+                        <article class="concept-card accent"><span class="card-tag">LOWER-LEVEL .NET DATA ACCESS</span>
+                            <h3>ADO.NET</h3>
+                            <p>APIs used in C# code to open connections, execute SQL commands and process results.</p>
+                            <p><strong>Used by:</strong> application code via providers such as
+                                <code>Microsoft.Data.SqlClient</code>.
+                            </p>
+                        </article>
+                        <article class="concept-card"><span class="card-tag">OBJECT-RELATIONAL MAPPER</span>
+                            <h3>EF Core</h3>
+                            <p>Maps C# classes to relational data, supports LINQ queries and tracks changes.</p>
+                            <p><strong>Used by:</strong> application code; relies on a database provider for SQL Server
+                                access.</p>
+                        </article>
+                    </div>
+                    <div class="activity">
+                        <h2>Choose the right technology</h2>
+                        <p class="activity-prompt">Read the scenario, then choose the most suitable tool.</p>
+                        <div class="scenario-tabs"><button aria-pressed="true" data-scenario="0" type="button">Scenario
+                                1</button><button aria-pressed="false" data-scenario="1" type="button">Scenario
+                                2</button><button aria-pressed="false" data-scenario="2" type="button">Scenario
+                                3</button></div>
+                        <p class="scenario-prompt" id="scenarioPrompt"></p>
+                        <div class="choice-grid" id="toolMatch"><button data-tool="ssms"
+                                type="button">SSMS</button><button data-tool="ado" type="button">ADO.NET</button><button
+                                data-tool="ef" type="button">EF Core</button></div>
+                        <p aria-live="polite" class="feedback" id="toolMatchFeedback"></p>
+                    </div>
+                    <div class="notice"><strong>Keep SQL Server separate:</strong> SQL Server is the DBMS that executes
+                        the SQL. SSMS is a client; ADO.NET is a .NET access technology; EF Core is an ORM. Neither EF
+                        Core nor SSMS replaces the database engine.</div>
+                </section>
+                <section aria-labelledby="t4" class="lesson" data-panel="4" hidden="">
+                    <div class="section-header"><span class="overline">STEP 05 · WHY TWO C# APPROACHES?</span><span
+                            class="duration">15 MIN</span></div>
+                    <h1 id="t4">Why learn ADO.NET before EF Core?</h1>
+                    <p class="lead">ADO.NET makes the individual pieces visible. You write the SQL, open the connection,
+                        execute a command and read the returned values. In larger systems, repeating these steps and
+                        manually translating rows to objects adds work.</p>
+                    <div class="tech-modes"><button aria-pressed="true" class="active" data-mode="direct"
+                            type="button">ADO.NET · direct</button><button aria-pressed="false" data-mode="orm"
+                            type="button">EF Core · ORM</button></div>
+                    <div class="activity">
+                        <div aria-live="polite" class="mode-diagram" id="modeDiagram">
+                            <div class="data-flow">
+                                <div class="flow-line"><span class="flow-node">C# Console</span><span>→</span><span
+                                        class="flow-node">ADO.NET / SqlClient</span><span>→</span><span
+                                        class="flow-node engine">SQL Server</span></div>
+                            </div>
+                            <p>With ADO.NET, the code directly manages the connection, SQL command and reader.</p>
+                        </div>
+                    </div>
+                    <div class="grid-two">
+                        <div class="concept-card"><span class="card-tag">WHAT ADO.NET TEACHES</span>
+                            <h3>Understand the mechanism</h3>
+                            <p>Connection objects, explicit SQL, parameters, reading data, resource cleanup and error
+                                handling. Excellent for learning what actually happens when C# talks to SQL Server.</p>
+                        </div>
+                        <div class="concept-card accent"><span class="card-tag">WHY EF CORE IS USEFUL</span>
+                            <h3>Reduce repeated data-access code</h3>
+                            <p>Uses C# entity classes, LINQ, change tracking and migrations. It can reduce manual SQL
+                                and row-to-object mapping for common operations.</p>
+                        </div>
+                    </div>
+                    <div class="activity">
+                        <h2>Compare the idea, not the syntax yet</h2>
+                        <p>These are <strong>conceptual previews</strong> for later sessions—not code you must memorize
+                            or execute today.</p>
+                        <div class="split-compare">
+                            <div><span class="tiny-label">ADO.NET (EXPLICIT)</span>
+                                <pre class="code-block"><code>Open connection
+Create SQL command
+Execute command
+Read returned values
+Dispose resources</code></pre>
+                            </div>
+                            <div><span class="tiny-label">EF CORE (ABSTRACTION)</span>
+                                <pre class="code-block"><code>Define entity model
+Configure DbContext
+Write LINQ query
+EF Core generates SQL
+Read mapped objects</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notice secondary"><strong>Important:</strong> EF Core does not replace SQL Server. For
+                        SQL Server it uses its provider, which builds on ADO.NET. EF Core saves effort in many cases but
+                        still requires understanding SQL, generated queries and performance. <b>We learn and practise
+                            ADO.NET first</b>; EF Core follows in the syllabus.</div>
+                </section>
+                <section aria-labelledby="t5" class="lesson" data-panel="5" hidden="">
+                    <div class="section-header"><span class="overline">STEP 06 · YOUR FIRST ADO.NET MENTAL
+                            MODEL</span><span class="duration">15 MIN</span></div>
+                    <h1 id="t5">ADO.NET: connection → command → result</h1>
+                    <p class="lead">Today we use the simplest possible read-only example: count the rows in
+                        <code>dbo.Students</code>. We will not build menus, forms, or CRUD screens.
+                    </p>
+                    <div class="activity">
+                        <h2>Explore the steps</h2>
+                        <p class="activity-prompt">Select each stage to see what it is responsible for. Follow the
+                            stages in order.</p>
+                        <div class="pipeline-steps" id="pipeline-steps"><button aria-pressed="true" class="active"
+                                data-stage="0" type="button">1 · Connection</button><button aria-pressed="false"
+                                data-stage="1" type="button">2 · Open</button><button aria-pressed="false"
+                                data-stage="2" type="button">3 · Command</button><button aria-pressed="false"
+                                data-stage="3" type="button">4 · Scalar result</button><button aria-pressed="false"
+                                data-stage="4" type="button">5 · Dispose</button></div>
+                        <div class="layer-detail" id="pipelineExplanation"><strong>1 · SqlConnection</strong>
+                            <p>Represents the chosen SQL Server connection: server, database and authentication
+                                information.</p>
+                        </div>
+                    </div>
+                    <div class="split-compare">
+                        <div class="concept-card">
+                            <h3>What goes in?</h3>
+                            <p>A connection string tells the provider <i>where</i> to connect. The SQL text tells SQL
+                                Server <i>what</i> to calculate.</p>
+                            <pre class="code-block"><code>SELECT COUNT(*)
+FROM dbo.Students;</code></pre>
+                        </div>
+                        <div class="concept-card accent">
+                            <h3>What comes back?</h3>
+                            <p>One number: how many rows the Students table contains. <code>ExecuteScalarAsync()</code>
+                                retrieves a single value from the first row and first column.</p>
+                            <div class="single-number">3 <span>rows in the starter data</span></div>
+                        </div>
+                    </div>
+                    <div class="notice"><strong>Coming next:</strong> In Session 02, a parameterized
+                        <code>SELECT ... WHERE StudentId = @id</code> and <code>SqlDataReader</code> let you retrieve
+                        and display an actual student record. We are intentionally not introducing them all at once.
+                    </div>
+                </section>
+                <section aria-labelledby="t6" class="lesson" data-panel="6" hidden="">
+                    <div class="section-header"><span class="overline">STEP 07 · FIRST PRACTICAL · C# CONSOLE
+                            ONLY</span><span class="duration">30 MIN</span></div>
+                    <h1 id="t6">Your first ADO.NET Console app</h1>
+                    <p class="lead">Build a C# Console application, open SQL Server, and display the number of student
+                        records. This is a real ADO.NET example, not an online database simulator.</p>
+                    <div class="notice secondary"><strong>What you need:</strong> .NET SDK (or Visual Studio with C#
+                        tools), SQL Server or LocalDB, and SSMS for the database setup. If an instance is not available,
+                        follow the code walkthrough with your instructor and run it when access becomes available.
+                        LocalDB is Windows-only. No campus laboratory or GUI project is required.</div>
+
+                    <!-- A · PREPARE THE DATABASE -->
+                    <div class="lab-part">
+                        <span class="lab-time">5 MIN</span>
+                        <h2>A · Prepare the starter database</h2>
+
+                        <p>
+                            Before connecting C# to SQL Server, we need a database.
+                            Open <strong>SQL Server Management Studio (SSMS)</strong>,
+                            connect to your SQL Server instance, and execute the
+                            supplied setup script.
+                        </p>
+
+                        <p>The script will:</p>
+                        <ol>
+                            <li>Create <code>TVET_DBM_Lab01</code> only if it does not already exist.</li>
+                            <li>Create <code>dbo.Students</code> only if the table is missing.</li>
+                            <li>Insert three sample students only if their IDs are not already present.</li>
+                        </ol>
+
+                        <div class="notice">
+                            <strong>Why check before creating?</strong>
+                            Running the setup script again should not recreate existing
+                            database objects or duplicate the sample students.
+                        </div>
+
+                        <div class="activity-bar">
+                            <a class="btn outline" href="sql/01_create_students.sql" download>
+                                Download SQL Server setup script
+                            </a>
+                        </div>
+
+                        <p class="small-muted">
+                            Remember which SQL Server instance you connected to in SSMS.
+                            Your C# application must connect to that same instance.
+                        </p>
+                    </div>
+
+
+                    <!-- B · VISUAL STUDIO PROJECT AND NUGET -->
+                    <div class="lab-part">
+                        <span class="lab-time">10 MIN</span>
+                        <h2>B · Create the C# project and install SqlClient</h2>
+
+                        <p>
+                            We will develop our application using
+                            <strong>Visual Studio</strong>.
+                            It will be a <strong>C# Console Application</strong>:
+                            an application that communicates with users through
+                            text input and output.
+                        </p>
+
+                        <h3>Part 1 · Create the Console Application</h3>
+
+                        <ol>
+                            <li>Launch <strong>Visual Studio</strong>.</li>
+                            <li>Click <strong>Create a new project</strong>.</li>
+                            <li>Search for <strong>Console App</strong>.</li>
+                            <li>Select the <strong>C# Console App</strong> template.</li>
+                            <li>Click <strong>Next</strong>.</li>
+                            <li>
+                                Enter <code>DBMFirstConnection</code>
+                                as the project name.
+                            </li>
+                            <li>Choose a project location and click <strong>Next</strong>.</li>
+                            <li>
+                                Select the .NET version specified by your instructor,
+                                then click <strong>Create</strong>.
+                            </li>
+                        </ol>
+
+                        <div class="notice">
+
+                            The Console is simply the application's text-based interface.
+                        </div>
+
+                        <h3>Part 2 · Install Microsoft.Data.SqlClient using NuGet</h3>
+
+                        <p>
+                            ADO.NET needs a SQL Server data provider.
+                            We will add <code>Microsoft.Data.SqlClient</code>
+                            through Visual Studio's built-in
+                            <strong>NuGet Package Manager</strong>.
+                        </p>
+
+                        <ol>
+                            <li>Locate your project in <strong>Solution Explorer</strong>.</li>
+                            <li>
+                                Right-click the <strong>DBMFirstConnection</strong>
+                                project (not the solution).
+                            </li>
+                            <li>Select <strong>Manage NuGet Packages</strong>.</li>
+                            <li>Open the <strong>Browse</strong> tab.</li>
+                            <li>
+                                Search for <code>Microsoft.Data.SqlClient</code>.
+                            </li>
+                            <li>Select the official package published by Microsoft.</li>
+                            <li>
+                                Click <strong>Install</strong> and accept any
+                                required license prompts.
+                            </li>
+                            <li>
+                                Verify the package appears under
+                                <strong>Dependencies → Packages</strong>
+                                in Solution Explorer.
+                            </li>
+                        </ol>
+
+                        <details class="code-explain">
+                            <summary>Why do we need this NuGet package?</summary>
+
+                            <div class="explain-lines">
+                                <p>
+                                    <b>NuGet</b> is the package manager used by .NET
+                                    projects to install and manage reusable libraries.
+                                </p>
+                                <p>
+                                    <b>Microsoft.Data.SqlClient</b> is Microsoft's
+                                    SQL Server data provider for .NET.
+                                </p>
+                                <p>
+                                    It provides classes such as
+                                    <code>SqlConnection</code> to connect to SQL Server
+                                    and <code>SqlCommand</code> to execute SQL commands.
+                                </p>
+                            </div>
+                        </details>
+
+                        <p class="small-muted">
+                            Checkpoint: You should now have a C# Console project with
+                            Microsoft.Data.SqlClient installed. No terminal commands
+                            are required.
+                        </p>
+                    </div>
+
+
+                    <!-- C · FIRST ADO.NET CONNECTION -->
+                    <div class="lab-part">
+                        <span class="lab-time">13 MIN</span>
+                        <h2>C · Write your first ADO.NET connection</h2>
+
+                        <p>
+                            Open <code>Program.cs</code> in Visual Studio and
+                            replace its contents with the code below.
+                            This program will connect to SQL Server, count the
+                            students in our database, and display the result
+                            in the Console.
+                        </p>
+
+
+                        <!-- SSMS SERVER NAME GUIDE -->
+                        <style>
+                            .dbm-server-guide {
+                                margin: 22px 0;
+                                padding: 22px;
+                                border: 1px solid #b5d9ed;
+                                border-radius: 18px;
+                                background: linear-gradient(135deg, #f0f9ff, #e8f5ff);
+                                color: #183954;
+                            }
+
+                            .dbm-server-guide * {
+                                box-sizing: border-box;
+                            }
+
+                            .dbm-server-guide .guide-label {
+                                display: inline-block;
+                                padding: 5px 11px;
+                                border-radius: 6px;
+                                background: #d7ecfb;
+                                color: #075c93;
+                                font-size: 0.72rem;
+                                font-weight: 800;
+                                letter-spacing: 0.7px;
+                                text-transform: uppercase;
+                            }
+
+                            .dbm-server-guide h3 {
+                                margin: 12px 0 8px;
+                                color: #123d63;
+                                font-size: 1.2rem;
+                            }
+
+                            .dbm-server-guide .guide-intro {
+                                margin: 0 0 18px;
+                                line-height: 1.7;
+                                color: #35546b;
+                            }
+
+                            .dbm-server-guide .guide-flow {
+                                display: grid;
+                                grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr);
+                                gap: 12px;
+                                align-items: center;
+                            }
+
+                            .dbm-server-guide .guide-panel {
+                                padding: 16px;
+                                min-width: 0;
+                                border: 1px solid #c6e2f1;
+                                border-radius: 13px;
+                                background: #fff;
+                            }
+
+                            .dbm-server-guide .panel-title {
+                                display: flex;
+                                gap: 9px;
+                                align-items: center;
+                                margin-bottom: 14px;
+                                font-size: 0.9rem;
+                                font-weight: 800;
+                                color: #194968;
+                            }
+
+                            .dbm-server-guide .step-number {
+                                display: inline-grid;
+                                place-items: center;
+                                flex: 0 0 26px;
+                                width: 26px;
+                                height: 26px;
+                                border-radius: 8px;
+                                background: #0877b6;
+                                color: #fff;
+                                font-size: 0.8rem;
+                            }
+
+                            .dbm-server-guide .fake-field {
+                                margin-top: 9px;
+                            }
+
+                            .dbm-server-guide .fake-field label {
+                                display: block;
+                                margin-bottom: 5px;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                color: #50687c;
+                            }
+
+                            .dbm-server-guide .fake-value {
+                                padding: 10px 11px;
+                                border: 1px solid #d7e3eb;
+                                border-radius: 7px;
+                                background: #f7fafc;
+                                font-family: Consolas, monospace;
+                                font-size: 0.84rem;
+                                overflow-wrap: anywhere;
+                            }
+
+                            .dbm-server-guide .fake-value.highlight {
+                                border: 2px solid #0786ce;
+                                background: #edf8ff;
+                                color: #075d91;
+                                font-weight: 800;
+                            }
+
+                            .dbm-server-guide .flow-arrow {
+                                text-align: center;
+                                font-size: 1.7rem;
+                                font-weight: 800;
+                                color: #0791bc;
+                            }
+
+                            .dbm-server-guide .guide-code {
+                                padding: 12px;
+                                border-radius: 8px;
+                                background: #102c43;
+                                color: #e8f7ff;
+                                font: 0.82rem/1.9 Consolas, monospace;
+                                overflow-x: auto;
+                                white-space: pre-wrap;
+                                overflow-wrap: anywhere;
+                            }
+
+                            .dbm-server-guide .guide-code mark {
+                                padding: 2px 3px;
+                                border-radius: 3px;
+                                background: #bdf2e6;
+                                color: #075448;
+                                font-weight: 800;
+                            }
+
+                            .dbm-server-guide .panel-hint {
+                                margin: 11px 0 0;
+                                font-size: 0.78rem;
+                                line-height: 1.6;
+                                color: #526b7e;
+                            }
+
+                            .dbm-server-guide .guide-steps {
+                                margin: 17px 0 0;
+                                padding-left: 23px;
+                                line-height: 1.8;
+                                font-size: 0.9rem;
+                            }
+
+                            .dbm-server-guide .guide-steps li {
+                                padding-left: 4px;
+                                margin-bottom: 5px;
+                            }
+
+                            .dbm-server-guide .guide-reminder {
+                                margin-top: 17px;
+                                padding: 12px 15px;
+                                border-left: 4px solid #07968d;
+                                border-radius: 7px;
+                                background: #def7f2;
+                                color: #175b58;
+                                font-size: 0.86rem;
+                                line-height: 1.7;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide {
+                                background: linear-gradient(135deg, #102b45, #113955);
+                                border-color: #345b74;
+                                color: #e9f5ff;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide h3,
+                            :root[data-theme="dark"] .dbm-server-guide .guide-intro {
+                                color: #e9f5ff;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide .guide-panel {
+                                background: #142e43;
+                                border-color: #36556a;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide .panel-title,
+                            :root[data-theme="dark"] .dbm-server-guide .fake-field label,
+                            :root[data-theme="dark"] .dbm-server-guide .panel-hint {
+                                color: #c1d9e9;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide .fake-value {
+                                background: #1b3b52;
+                                border-color: #436980;
+                                color: #eaf6ff;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide .fake-value.highlight {
+                                border-color: #40b8f2;
+                            }
+
+                            :root[data-theme="dark"] .dbm-server-guide .guide-reminder {
+                                background: #163f41;
+                                color: #c2f5e8;
+                            }
+
+                            @media (max-width: 720px) {
+                                .dbm-server-guide {
+                                    padding: 15px;
+                                }
+
+                                .dbm-server-guide .guide-flow {
+                                    grid-template-columns: minmax(0, 1fr);
+                                }
+
+                                .dbm-server-guide .flow-arrow {
+                                    transform: rotate(90deg);
+                                }
+
+                                .dbm-server-guide .guide-panel {
+                                    padding: 13px;
+                                }
+                            }
+                        </style>
+
+
+
+                        <div class="dbm-server-guide" id="dbm-server-guide">
+
+                            <span class="guide-label">
+                                CONNECTION SETUP
+                            </span>
+
+                            <span class="guide-label">BEFORE WRITING THE CODE</span>
+
+                            <h3>Retrieve Your SQL Server Connection Details</h3>
+
+                            <p class="guide-intro">
+                                In SSMS, open the <strong>Connect</strong> window and
+                                check the <strong>Connection Properties</strong> tab.
+                                Copy your <strong>Server Name</strong> and note the
+                                <strong>Authentication Method</strong>.
+                                You will use these details in the next step to configure
+                                your C# connection string.
+                            </p>
+
+
+
+                            <div class="guide-flow">
+
+                                <!-- LEFT: SSMS -->
+                                <div class="guide-panel">
+                                    <div class="panel-title">
+                                        <span class="step-number">1</span>
+                                        SSMS · Connection Details
+                                    </div>
+
+                                    <div class="fake-field">
+                                        <label>Server name · Copy this value</label>
+                                        <div class="fake-value highlight">.\SQLEXPRESS</div>
+                                    </div>
+
+                                    <div class="fake-field">
+                                        <label>Authentication</label>
+                                        <div class="fake-value">Windows Authentication</div>
+                                    </div>
+
+                                    <p class="panel-hint">
+                                        Example only. Use your own SQL Server instance.
+                                    </p>
+                                </div>
+
+                                <div class="flow-arrow" aria-hidden="true">➜</div>
+
+                                <!-- RIGHT: C# -->
+                                <div class="guide-panel">
+                                    <div class="panel-title">
+                                        <span class="step-number">2</span>
+                                        Visual Studio · Program.cs
+                                    </div>
+
+                                    <div class="guide-code">string cs =
+                                        @"<mark>Server=.\SQLEXPRESS</mark>;Database=TVET_DBM_Lab01;Integrated
+                                        Security=True;Encrypt=True;TrustServerCertificate=True";</div>
+
+                                    <p class="panel-hint">
+                                        Use your SSMS server name in place of the example.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="guide-reminder">
+                                <strong>Authentication matters:</strong>
+                                <code>Integrated Security=True</code> is used for
+                                Windows Authentication. SQL Server Authentication
+                                requires different credentials.
+                                Never publish passwords in GitHub.
+                            </div>
+
+                        </div>
+                        <!-- END CONNECTION SETUP GUIDE -->
+
+                        <p>
+                            Open <code>Program.cs</code> in Visual Studio and replace
+                            its contents with the code below. Update the connection
+                            string using your SSMS details, then run the application
+                            to count the students in <code>TVET_DBM_Lab01</code>.
+                        </p>
+
+
+                        <div class="code-shell">
+                            <div class="code-header">
+                                <span>Program.cs · C# Console App</span>
+                                <button data-copy="cs-snippet" type="button">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <pre id="cs-snippet"><code>using Microsoft.Data.SqlClient;
+
+string cs = @"Server=(localdb)\MSSQLLocalDB;
+Database=TVET_DBM_Lab01;
+Integrated Security=True;Encrypt=True;
+TrustServerCertificate=True";
+
+await using var connection = new SqlConnection(cs);
+await connection.OpenAsync();
+
+Console.WriteLine("Connected to SQL Server.");
+
+const string sql = "SELECT COUNT(*) FROM dbo.Students";
+
+await using var command = new SqlCommand(sql, connection);
+
+int total = Convert.ToInt32(
+    await command.ExecuteScalarAsync()
+);
+
+Console.WriteLine($"Total students: {total}");</code></pre>
+                        </div>
+
+                        <details class="code-explain" open>
+                            <summary>Why does each line exist? (Read before running)</summary>
+
+                            <div class="explain-lines">
+                                <p>
+                                    <b><code>using Microsoft.Data.SqlClient;</code></b>
+                                    — imports the SQL Server provider namespace,
+                                    giving us access to classes such as
+                                    <code>SqlConnection</code> and <code>SqlCommand</code>.
+                                </p>
+
+                                <p>
+                                    <b><code>string cs</code></b>
+                                    — stores the connection string, which identifies
+                                    the SQL Server instance, database, and authentication
+                                    settings. The sample uses Windows authentication
+                                    and trusts the local development server's certificate.
+                                    Production environments require appropriate
+                                    certificate validation.
+                                </p>
+
+                                <p>
+                                    <b><code>new SqlConnection(cs)</code></b>
+                                    — creates a connection object using those settings.
+                                    It does not open the connection yet.
+                                </p>
+
+                                <p>
+                                    <b><code>OpenAsync()</code></b>
+                                    — attempts to establish the actual connection
+                                    to SQL Server asynchronously.
+                                </p>
+
+                                <p>
+                                    <b><code>Console.WriteLine(...)</code></b>
+                                    — displays information in the Console window.
+                                </p>
+
+                                <p>
+                                    <b><code>const string sql</code></b>
+                                    — stores a fixed SQL query that counts the rows
+                                    in <code>dbo.Students</code>.
+                                </p>
+
+                                <p>
+                                    <b><code>new SqlCommand(sql, connection)</code></b>
+                                    — associates the SQL statement with our
+                                    database connection.
+                                </p>
+
+                                <p>
+                                    <b><code>ExecuteScalarAsync()</code></b>
+                                    — executes the query and returns a single value:
+                                    the student count.
+                                </p>
+
+                                <p>
+                                    <b><code>Convert.ToInt32(...)</code></b>
+                                    — converts the returned value into a C# integer.
+                                </p>
+
+                                <p>
+                                    <b><code>await using</code></b>
+                                    — ensures that the connection and command objects
+                                    are disposed of correctly when their scope ends.
+                                </p>
+                            </div>
+                        </details>
+
+                        <div class="activity-bar">
+                            <a class="btn outline" href="sample/Program.cs" download>
+                                Download complete Program.cs
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- D · RUN AND VERIFY IN VISUAL STUDIO -->
+                    <div class="lab-part">
+                        <span class="lab-time">6 MIN</span>
+                        <h2>D · Run the application and explain the result</h2>
+
+                        <p>
+                            In Visual Studio, press
+                            <strong>Ctrl + F5</strong>
+                            to run the Console Application without debugging.
+                            You can also select
+                            <strong>Debug → Start Without Debugging</strong>.
+                        </p>
+
+                        <p>
+                            Before running, predict the number of students
+                            that the query will return.
+                        </p>
+
+                        <h3>Expected Console output</h3>
+
+                        <div class="terminal-preview">
+                            Connected to SQL Server.<br>
+                            Total students: 3
+                        </div>
+
+                        <p class="small-muted">
+                            If additional students already exist, the count may be
+                            higher than three. The setup script does not delete
+                            previously stored rows.
+                        </p>
+
+                        <details class="code-explain">
+                            <summary>Connection failed? Check these first</summary>
+
+                            <div class="explain-lines">
+                                <p>
+                                    <b>SQL Server instance:</b>
+                                    Does the <code>Server</code> value match the
+                                    instance you connected to in SSMS?
+                                </p>
+                                <p>
+                                    <b>Database name:</b>
+                                    Does <code>TVET_DBM_Lab01</code> exist
+                                    on that instance?
+                                </p>
+                                <p>
+                                    <b>Server availability:</b>
+                                    Is your SQL Server or LocalDB instance running?
+                                </p>
+                                <p>
+                                    <b>Permissions:</b>
+                                    Does your Windows account have permission
+                                    to access the database?
+                                </p>
+                                <p>
+                                    <b>Security:</b>
+                                    Never publish real database passwords
+                                    in a public GitHub repository.
+                                </p>
+                            </div>
+                        </details>
+
+                        <div class="notice">
+                            <strong>Think about it:</strong>
+                            Which line opens the connection?
+                            Which line sends the SQL query?
+                            Which line displays the returned result?
+                            Explain the role of each before moving on.
+                        </div>
+                    </div>
+
+                </section>
+                <section aria-labelledby="t7" class="lesson" data-panel="7" hidden="">
+                    <div class="section-header"><span class="overline">STEP 08 · REFLECT &amp; PREVIEW</span><span
+                            class="duration">5 MIN</span></div>
+                    <h1 id="t7">What have you learned today?</h1>
+                    <p class="lead">You now know the purpose of DB3, the difference between database tools, and the
+                        first steps for a C# Console application to access SQL Server.</p>
+                    <div class="activity">
+                        <h2>Five quick recall questions</h2>
+                        <p>Choose an answer and read the feedback. These checks are for practice.</p>
+                        <div class="quiz-stack" id="finalQuiz"></div>
+                        <p aria-live="polite" class="review-status" id="quizStatus">0 of 5 questions answered correctly.
+                        </p>
+                    </div>
+                    <div class="activity assignment"><span class="overline">AFTER-SESSION PRACTICE · SINGLE FILE</span>
+                        <h2>Submit your first database connection</h2>
+                        <p>Use your <code>Program.cs</code> from today’s Console app. Include your name in a comment at
+                            the top and a short comment that explains what <code>ExecuteScalarAsync()</code> returns.
+                            Demonstrate the result orally if requested.</p>
+                        <p><strong>Submit exactly one file</strong> to Google Classroom named
+                            <code>StudentName_DB_Lab01.cs</code>. No ZIP, SQL setup file, screenshots or extra
+                            documents.
+                        </p>
+                        <div class="notice"><strong>Suggested rubric · 10 marks:</strong> project/SqlClient setup 2 ·
+                            correct SQL connection 3 · command and scalar result 3 · comments and clarity 2.</div>
+                    </div>
+                    <div class="three-session-path">
+                        <div><span>SESSION 01 · DONE</span><strong>Connection + scalar</strong>
+                            <p>Why the tools exist, first read-only Console query.</p>
+                        </div>
+                        <div><span>SESSION 02 · NEXT</span><strong>Parameter + Reader</strong>
+                            <p>Find one student using <code>@id</code> and display multiple values.</p>
+                        </div>
+                        <div><span>SESSION 03 · THEN</span><strong>Operations + errors</strong>
+                            <p>Strengthen the same Console app with safe data operations and handling.</p>
+                        </div>
+                    </div>
+                    <div class="dash-note final-dash"><img alt="Original database teacher mascot"
+                            src="images/db-mascot-teacher.webp" />
+                        <div><strong>DB Mentor · Looking ahead</strong>
+                            <p>We are not learning EF Core syntax yet. First understand SQL Server connections and
+                                commands with ADO.NET; then you can appreciate what an ORM simplifies and what it still
+                                depends on.</p>
+                        </div>
+                    </div>
+                </section>
+                <section aria-labelledby="syllabusTitle" class="lesson syllabus-panel" data-panel="syllabus" hidden="">
+                    <div class="syllabus-hero"><span class="eyebrow">YOUR LEARNING JOURNEY · 2026–2027</span>
+                        <h1 id="syllabusTitle">Course syllabus <em>&amp; roadmap.</em></h1>
+                        <p>This course uses a 16-week plan. The first week contains three guided ADO.NET meetings;
+                            further weeks follow the uploaded plan. Read the embedded PDF and explore the matching
+                            roadmap.</p>
+                        <div class="chips"><span>Database Management</span><span>TVET Level 2 · PDB2</span><span>16-week
+                                overview</span></div>
+                    </div>
+                    <div class="section-heading syllabus-heading">
+                        <div><span class="overline">COURSE ROADMAP</span>
+                            <h2>The sixteen-week syllabus sequence</h2>
+                            <p>This revised roadmap follows the uploaded syllabus week by week. Expand the accessible
+                                outline for exact topic names.</p>
+                        </div><span class="duration">16 WEEKS</span>
+                    </div>
+                    <figure class="roadmap-figure"><a href="images/dbm-syllabus-roadmap.jpg" rel="noopener"
+                            target="_blank" title="Open roadmap full size"><img
+                                alt="Sixteen-week syllabus-aligned Database Management roadmap, from Week 1 SQL Server and ADO.NET through Week 16 Final Assessment."
+                                loading="lazy" src="images/dbm-syllabus-roadmap.jpg" /></a>
+                        <figcaption>Syllabus-aligned visual roadmap · Open the image to zoom. Older roadmap differs; see
+                            the note below.</figcaption>
+                    </figure>
+                    <details class="roadmap-details">
+                        <summary>Read the complete roadmap as accessible text <span aria-hidden="true">＋</span>
+                        </summary>
+                        <ol class="roadmap-list">
+                            <li><span>01</span>
+                                <div><strong>SQL Server and ADO.NET</strong></div>
+                            </li>
+                            <li><span>02</span>
+                                <div><strong>Introduction to EF Core</strong></div>
+                            </li>
+                            <li><span>03</span>
+                                <div><strong>Data Models and Migrations</strong></div>
+                            </li>
+                            <li><span>04</span>
+                                <div><strong>CRUD and LINQ Queries</strong></div>
+                            </li>
+                            <li><span>05</span>
+                                <div><strong>Relationships and Loading</strong></div>
+                            </li>
+                            <li><span>06</span>
+                                <div><strong>T-SQL Scripting</strong></div>
+                            </li>
+                            <li><span>07</span>
+                                <div><strong>Views and SQL Functions</strong></div>
+                            </li>
+                            <li><span>08</span>
+                                <div><strong>Stored Procedures and Midterm</strong></div>
+                            </li>
+                            <li><span>09</span>
+                                <div><strong>Transactions and Error Handling</strong></div>
+                            </li>
+                            <li><span>10</span>
+                                <div><strong>Database Security</strong></div>
+                            </li>
+                            <li><span>11</span>
+                                <div><strong>Indexes and Query Plans</strong></div>
+                            </li>
+                            <li><span>12</span>
+                                <div><strong>EF Core and T-SQL Integration</strong></div>
+                            </li>
+                            <li><span>13</span>
+                                <div><strong>Query Performance</strong></div>
+                            </li>
+                            <li><span>14</span>
+                                <div><strong>Migration and Deployment</strong></div>
+                            </li>
+                            <li><span>15</span>
+                                <div><strong>Revision and Project</strong></div>
+                            </li>
+                            <li><span>16</span>
+                                <div><strong>Final Assessment</strong></div>
+                            </li>
+                        </ol>
+                    </details>
+                    <div class="section-heading syllabus-heading">
+                        <div><span class="overline">SYLLABUS DOCUMENT</span>
+                            <h2>Read the course syllabus PDF</h2>
+                            <p>The complete three-page plan is included in this website and can be viewed directly here,
+                                opened in another tab, or saved for offline study.</p>
+                        </div><span class="duration">PDF · 3 PAGES</span>
+                    </div>
+                    <div class="syllabus-toolbar"><a class="btn primary"
+                            href="resources/DBM_Course_Syllabus_2026-2027.pdf" rel="noopener" target="_blank">↗ Open
+                            PDF</a><a class="btn outline" download="DBM_Course_Syllabus_2026-2027.pdf"
+                            href="resources/DBM_Course_Syllabus_2026-2027.pdf">↓ Download PDF</a><span>Preserved from
+                            the supplied course-plan file</span></div>
+                    <div class="pdf-viewer"><iframe loading="lazy"
+                            src="resources/DBM_Course_Syllabus_2026-2027.pdf#view=FitH"
+                            title="Database Management course syllabus, three-page PDF"></iframe>
+                        <div class="pdf-fallback">If the embedded PDF is not visible in your browser, use <a
+                                href="resources/DBM_Course_Syllabus_2026-2027.pdf" rel="noopener" target="_blank">Open
+                                PDF</a>.</div>
+                    </div>
+                    <div class="notice syllabus-notice"><strong>Difference flagged:</strong> The earlier graphic began
+                        with two weeks of Database Fundamentals and later SQL Fundamentals, whereas the uploaded PDF
+                        begins with SQL Server and ADO.NET in Week 1 and EF Core in Week 2. The earlier graphic also
+                        assigned Weeks 15–16 to the final exam; the PDF specifies Week 15 Revision and Project, and Week
+                        16 Final Assessment. This revised roadmap follows the uploaded PDF (which is labeled Proposed
+                        Revision, October 2026).</div>
+                    <div class="resource-invite">
+                        <div><strong>Ready to start?</strong>
+                            <p>Return to the interactive Session 01 lesson. The syllabus view is not counted in your
+                                eight-step progress.</p>
+                        </div><button class="btn primary" id="returnToLesson" type="button">Continue Session 01
+                            →</button>
+                    </div>
+                </section>
+                <footer class="lesson-footer">
+                    <div class="footer-step"><small id="footerCount">STEP 01 OF 08</small><span
+                            id="footerTime">20-minute segment</span></div>
+                    <div class="footer-buttons"><button class="btn subtle" disabled="" id="previousBtn" type="button">←
+                            Previous</button><button aria-pressed="false" class="btn outline" id="completeBtn"
+                            type="button">✓ Mark completed</button><button class="btn primary" id="nextBtn"
+                            type="button">Next step →</button></div>
+                </footer>
+                <div aria-live="polite" class="completion" hidden="" id="completion" role="status">
+                    <div aria-hidden="true" class="confetti">✦ ✦ ✧</div><img alt="Database Management teacher mascot"
+                        src="images/db-mascot-teacher.webp" />
+                    <h2>Session 01 complete!</h2>
+                    <p>You have completed the eight steps of Session 01. Review your one-file Console assignment and
+                        prepare for the next ADO.NET lab.</p><button class="btn primary" id="closeCompletion"
+                        type="button">Return to lesson</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div aria-live="polite" class="toast" hidden="" id="toast" role="status"></div>
+</body>
+
+</html>

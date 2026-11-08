@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 365" role="img" aria-labelledby="title desc">
+<title id="title">A conceptual database system</title><desc id="desc">Application and management interface connect to a database management system, which manages a stored database. Arrows are conceptual, not actual network addresses.</desc>
+<defs><linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#128dd2"/><stop offset="1" stop-color="#1859ab"/></linearGradient><filter id="sh"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c3264" flood-opacity=".12"/></filter></defs>
+<rect width="680" height="365" rx="22" fill="#f4f9fd"/>
+<g fill="#d5e7f7"><circle cx="95" cy="46" r="4"/><circle cx="121" cy="46" r="4"/><circle cx="147" cy="46" r="4"/><circle cx="95" cy="72" r="4"/><circle cx="121" cy="72" r="4"/><circle cx="147" cy="72" r="4"/></g>
+<g filter="url(#sh)"><rect x="38" y="113" width="159" height="120" rx="15" fill="#fff" stroke="#c9deed"/><rect x="50" y="125" width="135" height="21" rx="6" fill="#e1f2fc"/><circle cx="62" cy="135" r="4" fill="#22adbf"/><rect x="64" y="163" width="108" height="10" rx="5" fill="#bed6e9"/><rect x="64" y="184" width="83" height="10" rx="5" fill="#cfe4f1"/>
+<rect x="261" y="98" width="161" height="152" rx="18" fill="#fff" stroke="#b9d9eb"/><path d="M290 137l18-18h63l17 18v73l-17 18h-63l-18-18z" fill="#eff9fc" stroke="#7fc8dc" stroke-width="2"/><path d="M314 171h51M314 187h51M314 203h32" stroke="#0c80bd" stroke-width="7" stroke-linecap="round"/>
+<rect x="486" y="102" width="162" height="145" rx="17" fill="#fff" stroke="#c8deed"/><ellipse cx="566" cy="137" rx="53" ry="20" fill="url(#c)"/><path d="M513 137v66c0 12 24 20 53 20s53-8 53-20v-66" fill="url(#c)"/><ellipse cx="566" cy="169" rx="53" ry="20" fill="none" stroke="#fff" stroke-width="4"/><ellipse cx="566" cy="203" rx="53" ry="20" fill="none" stroke="#fff" stroke-width="4"/>
+</g><path d="M206 172h46m-12-9 12 9-12 9M431 172h45m-12-9 12 9-12 9" stroke="#15aebd" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="Arial,sans-serif" font-size="15" text-anchor="middle" fill="#19324b"><text x="118" y="263" font-weight="700">Application</text><text x="341" y="278" font-weight="700">DBMS</text><text x="566" y="273" font-weight="700">Database</text></g>
+<text x="340" y="333" text-anchor="middle" font-size="14" fill="#56748e" font-family="Arial,sans-serif">Original educational illustration · conceptual workflow</text>
+</svg>
