@@ -288,3 +288,57 @@
   if (location.hash.slice(1) === 'syllabus') showSyllabus({ scroll: false, replace: true });
   else showStep(current, { scroll: false, replace: true });
 })();
+(function () {
+  const root = document.getElementById('ado-component-map');
+  if (!root || root.dataset.initialized === 'true') return;
+  root.dataset.initialized = 'true';
+  root.classList.add('ado-js');
+  const nodes = Array.from(root.querySelectorAll('[data-ado-step]'));
+  const detail = root.querySelector('[data-ado-detail]');
+  const count = root.querySelector('[data-ado-count]');
+  const progress = root.querySelector('[data-ado-progress]');
+  const next = root.querySelector('[data-ado-next]');
+  const descriptions = [
+    ['SqlConnection', 'Creates and opens a connection to SQL Server. Used today: new SqlConnection(cs), followed by OpenAsync().'],
+    ['SqlCommand', 'Represents a SQL statement or stored procedure. Used today: ExecuteScalarAsync() returns one value, the student count.'],
+    ['SqlParameter', 'Supplies typed values to parameterized SQL commands. You will use it when filtering for one student in Session 02.'],
+    ['SqlDataReader', 'Reads query results forward, one row at a time, while the connection is in use. Introduced in Session 02.'],
+    ['SqlTransaction', 'Groups commands in a transaction so changes can be committed together or rolled back. Architecture reference.'],
+    ['SqlDataAdapter', 'A bridge that uses SqlCommand and SqlConnection to fill or update in-memory DataTable/DataSet objects. Architecture reference.'],
+    ['DataTable', 'A System.Data class that holds rows and columns in memory, so they can be accessed after a connection is closed.'],
+    ['DataSet', 'A System.Data class that can contain multiple DataTable objects and relations in memory.']
+  ];
+  let shown = 0;
+  let selected = 0;
+  function paint() {
+    nodes.forEach(node => {
+      const step = Number(node.dataset.adoStep);
+      const visible = step <= shown;
+      node.classList.toggle('is-visible', visible);
+      node.classList.toggle('is-current', visible && step === selected);
+      node.disabled = !visible;
+      node.setAttribute('aria-label', visible ? descriptions[step - 1][0] + ': show explanation' : 'Class ' + step + ' not yet revealed');
+    });
+    count.textContent = shown + ' / ' + nodes.length;
+    progress.style.width = (100 * shown / nodes.length) + '%';
+    next.disabled = shown === nodes.length;
+    if (selected > 0) {
+      const d = descriptions[selected - 1];
+      detail.replaceChildren();
+      const strong = document.createElement('strong');
+      strong.textContent = selected + ' · ' + d[0] + ' — ';
+      detail.append(strong, document.createTextNode(d[1]));
+    } else {
+      detail.replaceChildren();
+      const strong = document.createElement('strong');
+      strong.textContent = 'Ready to explore. ';
+      detail.append(strong, document.createTextNode('Select “Reveal next class” to uncover the ADO.NET components.'));
+    }
+  }
+  next.addEventListener('click', () => { if (shown < nodes.length) { shown += 1; selected = shown; paint(); } });
+  root.querySelector('[data-ado-all]').addEventListener('click', () => { shown = nodes.length; selected = 1; paint(); });
+  root.querySelector('[data-ado-reset]').addEventListener('click', () => { shown = 0; selected = 0; paint(); });
+  nodes.forEach(node => node.addEventListener('click', () => { const s = Number(node.dataset.adoStep); if (s <= shown) { selected = s; paint(); } }));
+  paint();
+})();
+
