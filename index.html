@@ -417,6 +417,43 @@ Read mapped objects</code></pre>
                     <div class="section-header"><span class="overline">STEP 06 · YOUR FIRST ADO.NET MENTAL
                             MODEL</span><span class="duration">15 MIN</span></div>
                     <h1 id="t5">ADO.NET: connection → command → result</h1>
+                    <p class="lead">Today we use the simplest possible read-only example: count the rows in
+                        <code>dbo.Students</code>. We will not build menus, forms, or CRUD screens.
+                    </p>
+                    <div class="activity">
+                        <h2>Explore the steps</h2>
+                        <p class="activity-prompt">Select each stage to see what it is responsible for. Follow the
+                            stages in order.</p>
+                        <div class="pipeline-steps" id="pipeline-steps"><button aria-pressed="true" class="active"
+                                data-stage="0" type="button">1 · Connection</button><button aria-pressed="false"
+                                data-stage="1" type="button">2 · Open</button><button aria-pressed="false"
+                                data-stage="2" type="button">3 · Command</button><button aria-pressed="false"
+                                data-stage="3" type="button">4 · Scalar result</button><button aria-pressed="false"
+                                data-stage="4" type="button">5 · Dispose</button></div>
+                        <div class="layer-detail" id="pipelineExplanation"><strong>1 · SqlConnection</strong>
+                            <p>Represents the chosen SQL Server connection: server, database and authentication
+                                information.</p>
+                        </div>
+                    </div>
+                    <div class="split-compare">
+                        <div class="concept-card">
+                            <h3>What goes in?</h3>
+                            <p>A connection string tells the provider <i>where</i> to connect. The SQL text tells SQL
+                                Server <i>what</i> to calculate.</p>
+                            <pre class="code-block"><code>SELECT COUNT(*)
+FROM dbo.Students;</code></pre>
+                        </div>
+                        <div class="concept-card accent">
+                            <h3>What comes back?</h3>
+                            <p>One number: how many rows the Students table contains. <code>ExecuteScalarAsync()</code>
+                                retrieves a single value from the first row and first column.</p>
+                            <div class="single-number">3 <span>rows in the starter data</span></div>
+                        </div>
+                    </div>
+                    <div class="notice"><strong>Coming next:</strong> In Session 02, a parameterized
+                        <code>SELECT ... WHERE StudentId = @id</code> and <code>SqlDataReader</code> let you retrieve
+                        and display an actual student record. We are intentionally not introducing them all at once.
+                    </div>
                     <section class="ado-map" id="ado-component-map" aria-labelledby="ado-map-heading">
   <span class="ado-map__eyebrow">Interactive architecture · Explore the ADO.NET classes</span>
   <div class="ado-map__header">
@@ -464,43 +501,7 @@ Read mapped objects</code></pre>
   <p class="ado-map__footnote"><strong>Class vs. method:</strong> <code>SqlCommand</code> is a class; <code>ExecuteScalarAsync()</code> is one of its methods and returns a single result. <strong>Architecture note:</strong> <code>SqlDataAdapter</code> uses connections and commands to fill or update in-memory tables; <code>DataTable</code> and <code>DataSet</code> are not SQL Server provider classes.</p>
 </section>
 
-                    <p class="lead">Today we use the simplest possible read-only example: count the rows in
-                        <code>dbo.Students</code>. We will not build menus, forms, or CRUD screens.
-                    </p>
-                    <div class="activity">
-                        <h2>Explore the steps</h2>
-                        <p class="activity-prompt">Select each stage to see what it is responsible for. Follow the
-                            stages in order.</p>
-                        <div class="pipeline-steps" id="pipeline-steps"><button aria-pressed="true" class="active"
-                                data-stage="0" type="button">1 · Connection</button><button aria-pressed="false"
-                                data-stage="1" type="button">2 · Open</button><button aria-pressed="false"
-                                data-stage="2" type="button">3 · Command</button><button aria-pressed="false"
-                                data-stage="3" type="button">4 · Scalar result</button><button aria-pressed="false"
-                                data-stage="4" type="button">5 · Dispose</button></div>
-                        <div class="layer-detail" id="pipelineExplanation"><strong>1 · SqlConnection</strong>
-                            <p>Represents the chosen SQL Server connection: server, database and authentication
-                                information.</p>
-                        </div>
-                    </div>
-                    <div class="split-compare">
-                        <div class="concept-card">
-                            <h3>What goes in?</h3>
-                            <p>A connection string tells the provider <i>where</i> to connect. The SQL text tells SQL
-                                Server <i>what</i> to calculate.</p>
-                            <pre class="code-block"><code>SELECT COUNT(*)
-FROM dbo.Students;</code></pre>
-                        </div>
-                        <div class="concept-card accent">
-                            <h3>What comes back?</h3>
-                            <p>One number: how many rows the Students table contains. <code>ExecuteScalarAsync()</code>
-                                retrieves a single value from the first row and first column.</p>
-                            <div class="single-number">3 <span>rows in the starter data</span></div>
-                        </div>
-                    </div>
-                    <div class="notice"><strong>Coming next:</strong> In Session 02, a parameterized
-                        <code>SELECT ... WHERE StudentId = @id</code> and <code>SqlDataReader</code> let you retrieve
-                        and display an actual student record. We are intentionally not introducing them all at once.
-                    </div>
+                    
                 </section>
                 <section aria-labelledby="t6" class="lesson" data-panel="6" hidden="">
                     <div class="section-header"><span class="overline">STEP 07 · FIRST PRACTICAL · C# CONSOLE
