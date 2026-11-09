@@ -4452,3 +4452,16 @@ details p {
       url("../images/dbm-header-background.webp") !important;
   }
 }
+
+@media (max-width: 1160px) {
+  .hero.hero-intro,
+  :root[data-theme="dark"] .hero.hero-intro {
+    align-items: center ;
+  }
+
+  .hero.hero-intro .hero-main {
+    align-self: center ;
+    margin-top: auto ;
+    margin-bottom: auto ;
+  }
+}
