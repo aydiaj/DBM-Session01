@@ -417,6 +417,53 @@ Read mapped objects</code></pre>
                     <div class="section-header"><span class="overline">STEP 06 · YOUR FIRST ADO.NET MENTAL
                             MODEL</span><span class="duration">15 MIN</span></div>
                     <h1 id="t5">ADO.NET: connection → command → result</h1>
+                    <section class="ado-map" id="ado-component-map" aria-labelledby="ado-map-heading">
+  <span class="ado-map__eyebrow">Interactive architecture · Explore the ADO.NET classes</span>
+  <div class="ado-map__header">
+    <div>
+      <h3 id="ado-map-heading">How C# communicates with SQL Server</h3>
+      <p class="ado-map__intro">Reveal the class names one at a time to explore the connected and disconnected parts of ADO.NET. <strong>Only the first two classes are used in today's Console lab.</strong></p>
+    </div>
+  </div>
+
+  <div class="ado-map__controls">
+    <button class="ado-map__btn" type="button" data-ado-next>Reveal next class →</button>
+    <button class="ado-map__btn ado-map__btn--ghost" type="button" data-ado-all>Show all</button>
+    <button class="ado-map__btn ado-map__btn--ghost" type="button" data-ado-reset>Reset</button>
+    <div class="ado-map__count" role="status"><span data-ado-count>0 / 8</span><span class="ado-map__track"><span class="ado-map__progress" data-ado-progress></span></span></div>
+  </div>
+
+  <div class="ado-map__app">C# Console Application<small>Our program calls ADO.NET classes in C#</small></div>
+  <div class="ado-map__vertical-arrow" aria-hidden="true"></div>
+  <div class="ado-map__provider">
+    <div class="ado-map__provider-top"><span class="ado-map__provider-title">ADO.NET · Provider + In-memory Components</span><span class="ado-map__provider-tag">Microsoft.Data.SqlClient · System.Data</span></div>
+    <div class="ado-map__lanes">
+      <div class="ado-map__lane">
+        <div class="ado-map__lane-head"><span class="ado-map__lane-title">Connected access</span><span class="ado-map__lane-caption">Uses a live connection while accessing results</span></div>
+        <div class="ado-map__cards">
+          <button class="ado-map__node" type="button" data-ado-step="1"><span class="ado-map__node-num">01 · CONNECT</span><br><code>SqlConnection</code><span class="ado-map__node-note">Opens the database connection <span class="ado-map__today">TODAY</span></span><span class="ado-map__locked">Reveal class 01</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="2"><span class="ado-map__node-num">02 · COMMAND</span><br><code>SqlCommand</code><span class="ado-map__node-note">Runs SQL instructions <span class="ado-map__today">TODAY</span></span><span class="ado-map__locked">Reveal class 02</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="3"><span class="ado-map__node-num">03 · VALUES</span><br><code>SqlParameter</code><span class="ado-map__node-note">Supplies typed parameter values</span><span class="ado-map__locked">Reveal class 03</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="4"><span class="ado-map__node-num">04 · ROWS</span><br><code>SqlDataReader</code><span class="ado-map__node-note">Reads result rows forward</span><span class="ado-map__locked">Reveal class 04</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="5"><span class="ado-map__node-num">05 · TRANSACTION</span><br><code>SqlTransaction</code><span class="ado-map__node-note">Groups changes as one unit</span><span class="ado-map__locked">Reveal class 05</span></button>
+        </div>
+      </div>
+      <div class="ado-map__lane ado-map__lane--disconnected">
+        <div class="ado-map__lane-head"><span class="ado-map__lane-title">Disconnected access</span><span class="ado-map__lane-caption">Work with data cached in memory</span></div>
+        <div class="ado-map__cards">
+          <button class="ado-map__node" type="button" data-ado-step="6"><span class="ado-map__node-num">06 · BRIDGE</span><br><code>SqlDataAdapter</code><span class="ado-map__node-note">Transfers data using commands and connections</span><span class="ado-map__locked">Reveal class 06</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="7"><span class="ado-map__node-num">07 · MEMORY TABLE</span><br><code>DataTable</code><span class="ado-map__node-note">Stores rows and columns in memory</span><span class="ado-map__locked">Reveal class 07</span></button>
+          <button class="ado-map__node" type="button" data-ado-step="8"><span class="ado-map__node-num">08 · MEMORY COLLECTION</span><br><code>DataSet</code><span class="ado-map__node-note">Contains tables and relationships in memory</span><span class="ado-map__locked">Reveal class 08</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ado-map__vertical-arrow" aria-hidden="true"></div>
+  <div class="ado-map__database">SQL Server Database <small>TVET_DBM_Lab01 · dbo.Students</small></div>
+  <div class="ado-map__detail" data-ado-detail aria-live="polite"><strong>Ready to explore.</strong> Select “Reveal next class” to uncover the ADO.NET components.</div>
+  <p class="ado-map__footnote"><strong>Class vs. method:</strong> <code>SqlCommand</code> is a class; <code>ExecuteScalarAsync()</code> is one of its methods and returns a single result. <strong>Architecture note:</strong> <code>SqlDataAdapter</code> uses connections and commands to fill or update in-memory tables; <code>DataTable</code> and <code>DataSet</code> are not SQL Server provider classes.</p>
+</section>
+
                     <p class="lead">Today we use the simplest possible read-only example: count the rows in
                         <code>dbo.Students</code>. We will not build menus, forms, or CRUD screens.
                     </p>
