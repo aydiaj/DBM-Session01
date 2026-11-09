@@ -4390,3 +4390,65 @@ details p {
       transition: none
     }
   }
+
+/* Tablet + mobile: one hero, no stacked image */
+@media (max-width: 1160px) {
+  .hero.hero-intro,
+  :root[data-theme="dark"] .hero.hero-intro {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+
+    min-height: 340px !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: clamp(24px, 4vw, 38px) !important;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(8, 37, 72, 0.95),
+        rgba(8, 37, 72, 0.75) 48%,
+        rgba(8, 37, 72, 0.12)
+      ),
+      url("../images/dbm-header-background.webp") !important;
+
+    background-size: cover !important;
+    background-position: center, 75% center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Remove the separate image block */
+  .hero.hero-intro::before,
+  .hero.hero-intro::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .hero.hero-intro .hero-main {
+    flex: 0 1 auto !important;
+    width: 58% !important;
+    max-width: 58% !important;
+    padding: 0 !important;
+  }
+}
+
+/* Phones: give the text room and strengthen contrast */
+@media (max-width: 600px) {
+  .hero.hero-intro .hero-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero.hero-intro,
+  :root[data-theme="dark"] .hero.hero-intro {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(8, 37, 72, 0.94),
+        rgba(8, 37, 72, 0.80) 55%,
+        rgba(8, 37, 72, 0.40)
+      ),
+      url("../images/dbm-header-background.webp") !important;
+  }
+}
